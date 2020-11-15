@@ -1,4 +1,8 @@
 import { Injectable } from '@angular/core';
+/**
+ * This service if for the add and edit dialog boxes of the grocery app
+ */
+
 import { AlertController } from '@ionic/angular';
 import { GroceriesServiceService } from './groceries-service.service';
 
@@ -9,7 +13,7 @@ export class InputDialogServiceService {
 
   constructor(public alertController: AlertController, public dataService: GroceriesServiceService) { }
 
-
+  /* the ? next to inputs makes them optional */
   async showPrompt(item?, index?, slidingItem?) {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
@@ -40,6 +44,7 @@ export class InputDialogServiceService {
             console.log('Confirm Save', item);
             if (index !== undefined) {
               this.dataService.editItem(item, index);
+              /* item doesn't slide back when finished without this line*/
               slidingItem.close();
             }
             else {

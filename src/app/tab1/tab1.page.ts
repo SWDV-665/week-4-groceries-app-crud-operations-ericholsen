@@ -33,7 +33,7 @@ export class Tab1Page {
     this.dataService.removeItem(index);
   }
 
-
+  /*slidingItem included to enable the item to slide back when done, name commes from HTML*/
   async editItem(item, index, slidingItem) {
     console.log("Edit Item = ", item, index);
     const toast = await this.toastController.create({

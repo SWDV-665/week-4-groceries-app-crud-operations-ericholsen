@@ -1,3 +1,7 @@
+/**
+ * This service is for the data of the Groceries app
+ */
+
 import { Injectable } from '@angular/core';
 
 @Injectable({
